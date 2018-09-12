@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.user.newweather">
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".SelectCity"></activity>
+        <activity android:name=".ParseTest"></activity>
+        <activity android:name="cityname.Changhua"></activity>
+        <activity android:name="cityname.Chiayi"></activity>
+        <activity android:name="cityname.Chiayi_city"></activity>
+        <activity android:name="cityname.Hsinchu"></activity>
+        <activity android:name="cityname.Hsinchu_city"></activity>
+        <activity android:name="cityname.Hualien"></activity>
+        <activity android:name="cityname.Jinmen"></activity>
+        <activity android:name="cityname.Kaohsiung"></activity>
+        <activity android:name="cityname.Keelung"></activity>
+        <activity android:name="cityname.Lianjiang"></activity>
+        <activity android:name="cityname.Miaoli"></activity>
+        <activity android:name="cityname.Nantou"></activity>
+        <activity android:name="cityname.Penghu"></activity>
+        <activity android:name="cityname.Pingtung"></activity>
+        <activity android:name="cityname.Taichung"></activity>
+        <activity android:name="cityname.Tainan"></activity>
+        <activity android:name="cityname.Taipei"></activity>
+        <activity android:name="cityname.Taipei_new"></activity>
+        <activity android:name="cityname.Taitung"></activity>
+        <activity android:name="cityname.Taoyuan"></activity>
+        <activity android:name="cityname.Yilan"></activity>
+        <activity android:name="cityname.Yunlin"></activity>
+
+
+
+
+    </application>
+
+</manifest>
+
