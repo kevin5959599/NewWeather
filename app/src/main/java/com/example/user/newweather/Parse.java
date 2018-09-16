@@ -56,6 +56,8 @@ public class Parse extends Activity {
         weathercode = getIntent().getIntExtra("weathercode",weathercode);
         String citycode1 = String.valueOf(citycode);
         Log.d("777777777777",citycode1);
+        String weather1 = String.valueOf(weathercode);
+        Log.d("999999999999",weather1);
         initView();
         getWeatherDatafromNet();
     }
@@ -104,9 +106,9 @@ public class Parse extends Activity {
 
         TodayWeather todayWeather = null;
         int count = 0;
-        int temp_a = 282;
+        int temp_a = 283;
         int temp_b = 289;
-        int a = 282;
+        int a = 283;
         int b = 23;
         String string;
 
@@ -135,6 +137,7 @@ public class Parse extends Activity {
                             todayWeather = new TodayWeather();
                         }
                         if (todayWeather != null) {
+
                             if (xmlPullParser.getName().equals("value"))
                             {
                                 count = count + 1;
@@ -142,19 +145,18 @@ public class Parse extends Activity {
                                 /*eventType = xmlPullParser.next();
                                 todayWeather.setDetail(xmlPullParser.getText());
                                 Log.d("86868686", xmlPullParser.getText());*/
-                               /* String count1 = String.valueOf(count);
+                                /*String count1 = String.valueOf(count);
                                 Log.d("0000",count1);*/
                                 if(count==temp_a+weathercode*a+weathercode*b){
+                                    String weather1 = String.valueOf(weathercode);
+                                    Log.d("44444444444444",weather1);
+
                                     eventType = xmlPullParser.next();
                                     todayWeather.setMorning(xmlPullParser.getText());
                                     Log.d("1111", xmlPullParser.getText());
                                 }
 
 
-                            }else if(xmlPullParser.getName().equals("locationName")){
-                                eventType = xmlPullParser.next();
-                                todayWeather.setNight(xmlPullParser.getText());
-                                Log.d("2222", xmlPullParser.getText());
                             }
 
 

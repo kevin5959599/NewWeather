@@ -72,6 +72,8 @@ public class SelectCity extends Activity implements View.OnClickListener {
                     city.setText("當前城市:基隆市");
                     cityname = text;
                     Intent intent = new Intent(SelectCity.this, Keelung.class);
+                    intent.putExtra("citycode", updatecitycode);
+                    intent.putExtra("cityname", cityname);
                     startActivity(intent);
                 }else if(text=="臺北市"){
                     updatecitycode = "01";
@@ -79,6 +81,8 @@ public class SelectCity extends Activity implements View.OnClickListener {
                     city.setText("當前城市:臺北市");
                     cityname = text;
                     Intent intent = new Intent(SelectCity.this, Taipei.class);
+                    intent.putExtra("citycode", updatecitycode);
+                    intent.putExtra("cityname", cityname);
                     startActivity(intent);
                 }else if(text=="新北市"){
                     updatecitycode = "04";
@@ -86,6 +90,8 @@ public class SelectCity extends Activity implements View.OnClickListener {
                     city.setText("當前城市:新北市");
                     cityname = text;
                     Intent intent = new Intent(SelectCity.this, Taipei_new.class);
+                    intent.putExtra("citycode", updatecitycode);
+                    intent.putExtra("cityname", cityname);
                     startActivity(intent);
                 }else if(text=="桃園市"){
                     updatecitycode = "05";
@@ -93,6 +99,8 @@ public class SelectCity extends Activity implements View.OnClickListener {
                     city.setText("當前城市:桃園市");
                     cityname = text;
                     Intent intent = new Intent(SelectCity.this, Taoyuan.class);
+                    intent.putExtra("citycode", updatecitycode);
+                    intent.putExtra("cityname", cityname);
                     startActivity(intent);
                 }else if(text=="新竹市"){
                     updatecitycode = "14";
@@ -100,6 +108,8 @@ public class SelectCity extends Activity implements View.OnClickListener {
                     city.setText("當前城市:新竹市");
                     cityname = text;
                     Intent intent = new Intent(SelectCity.this, Hsinchu_city.class);
+                    intent.putExtra("citycode", updatecitycode);
+                    intent.putExtra("cityname", cityname);
                     startActivity(intent);
                 }else if(text=="新竹縣"){
                     updatecitycode = "06";
@@ -107,6 +117,8 @@ public class SelectCity extends Activity implements View.OnClickListener {
                     city.setText("當前城市:新竹縣");
                     cityname = text;
                     Intent intent = new Intent(SelectCity.this, Hsinchu.class);
+                    intent.putExtra("citycode", updatecitycode);
+                    intent.putExtra("cityname", cityname);
                     startActivity(intent);
                 }else if(text=="宜蘭縣"){
                     updatecitycode = "17";
@@ -114,6 +126,8 @@ public class SelectCity extends Activity implements View.OnClickListener {
                     city.setText("當前城市:宜蘭縣");
                     cityname = text;
                     Intent intent = new Intent(SelectCity.this, Yilan.class);
+                    intent.putExtra("citycode", updatecitycode);
+                    intent.putExtra("cityname", cityname);
                     startActivity(intent);
                 }else if(text=="苗栗縣"){
                     updatecitycode = "07";
@@ -121,6 +135,8 @@ public class SelectCity extends Activity implements View.OnClickListener {
                     city.setText("當前城市:苗栗縣");
                     cityname = text;
                     Intent intent = new Intent(SelectCity.this, Miaoli.class);
+                    intent.putExtra("citycode", updatecitycode);
+                    intent.putExtra("cityname", cityname);
                     startActivity(intent);
                 }else if(text=="臺中市"){
                     updatecitycode = "08";
@@ -128,6 +144,8 @@ public class SelectCity extends Activity implements View.OnClickListener {
                     city.setText("當前城市:臺中市");
                     cityname = text;
                     Intent intent = new Intent(SelectCity.this, Taichung.class);
+                    intent.putExtra("citycode", updatecitycode);
+                    intent.putExtra("cityname", cityname);
                     startActivity(intent);
                 }else if(text=="彰化縣"){
                     updatecitycode = "09";
@@ -135,6 +153,8 @@ public class SelectCity extends Activity implements View.OnClickListener {
                     city.setText("當前城市:彰化縣");
                     cityname = text;
                     Intent intent = new Intent(SelectCity.this, Changhua.class);
+                    intent.putExtra("citycode", updatecitycode);
+                    intent.putExtra("cityname", cityname);
                     startActivity(intent);
                 }else if(text=="南投縣"){
                     updatecitycode = "10";
@@ -142,6 +162,8 @@ public class SelectCity extends Activity implements View.OnClickListener {
                     city.setText("當前城市:南投縣");
                     cityname = text;
                     Intent intent = new Intent(SelectCity.this, Nantou.class);
+                    intent.putExtra("citycode", updatecitycode);
+                    intent.putExtra("cityname", cityname);
                     startActivity(intent);
                 }else if(text=="雲林縣"){
                     updatecitycode = "11";
@@ -149,6 +171,8 @@ public class SelectCity extends Activity implements View.OnClickListener {
                     city.setText("當前城市:雲林縣");
                     cityname = text;
                     Intent intent = new Intent(SelectCity.this, Yunlin.class);
+                    intent.putExtra("citycode", updatecitycode);
+                    intent.putExtra("cityname", cityname);
                     startActivity(intent);
                 }else if(text=="嘉義市"){
                     updatecitycode = "16";
@@ -156,6 +180,8 @@ public class SelectCity extends Activity implements View.OnClickListener {
                     city.setText("當前城市:嘉義市");
                     cityname = text;
                     Intent intent = new Intent(SelectCity.this, Chiayi_city.class);
+                    intent.putExtra("citycode", updatecitycode);
+                    intent.putExtra("cityname", cityname);
                     startActivity(intent);
                 }else if(text=="嘉義縣"){
                     updatecitycode = "12";
@@ -163,6 +189,8 @@ public class SelectCity extends Activity implements View.OnClickListener {
                     city.setText("當前城市:嘉義縣");
                     cityname = text;
                     Intent intent = new Intent(SelectCity.this, Chiayi_city.class);
+                    intent.putExtra("citycode", updatecitycode);
+                    intent.putExtra("cityname", cityname);
                     startActivity(intent);
                 }else if(text=="臺南市"){
                     updatecitycode = "13";
@@ -179,6 +207,8 @@ public class SelectCity extends Activity implements View.OnClickListener {
                     city.setText("當前城市:高雄市");
                     cityname = text;
                     Intent intent = new Intent(SelectCity.this, Kaohsiung.class);
+                    intent.putExtra("citycode", updatecitycode);
+                    intent.putExtra("cityname", cityname);
                     startActivity(intent);
                 }else if(text=="屏東縣"){
                     updatecitycode = "15";
@@ -186,6 +216,8 @@ public class SelectCity extends Activity implements View.OnClickListener {
                     city.setText("當前城市:屏東縣");
                     cityname = text;
                     Intent intent = new Intent(SelectCity.this, Pingtung.class);
+                    intent.putExtra("citycode", updatecitycode);
+                    intent.putExtra("cityname", cityname);
                     startActivity(intent);
                 }else if(text=="澎湖縣"){
                     updatecitycode = "20";
@@ -193,6 +225,8 @@ public class SelectCity extends Activity implements View.OnClickListener {
                     city.setText("當前城市:澎湖縣");
                     cityname = text;
                     Intent intent = new Intent(SelectCity.this, Penghu.class);
+                    intent.putExtra("citycode", updatecitycode);
+                    intent.putExtra("cityname", cityname);
                     startActivity(intent);
                 }else if(text=="花蓮縣"){
                     updatecitycode = "18";
@@ -200,6 +234,8 @@ public class SelectCity extends Activity implements View.OnClickListener {
                     city.setText("當前城市:花蓮縣");
                     cityname = text;
                     Intent intent = new Intent(SelectCity.this, Hualien.class);
+                    intent.putExtra("citycode", updatecitycode);
+                    intent.putExtra("cityname", cityname);
                     startActivity(intent);
                 }else if(text=="臺東縣"){
                     updatecitycode = "19";
@@ -207,6 +243,8 @@ public class SelectCity extends Activity implements View.OnClickListener {
                     city.setText("當前城市:臺東縣");
                     cityname = text;
                     Intent intent = new Intent(SelectCity.this, Taitung.class);
+                    intent.putExtra("citycode", updatecitycode);
+                    intent.putExtra("cityname", cityname);
                     startActivity(intent);
                 }else if(text=="金門縣"){
                     updatecitycode = "21";
@@ -214,6 +252,8 @@ public class SelectCity extends Activity implements View.OnClickListener {
                     city.setText("當前城市:金門縣");
                     cityname = text;
                     Intent intent = new Intent(SelectCity.this, Jinmen.class);
+                    intent.putExtra("citycode", updatecitycode);
+                    intent.putExtra("cityname", cityname);
                     startActivity(intent);
                 }else if(text=="連江縣"){
                     updatecitycode = "22";
@@ -221,6 +261,8 @@ public class SelectCity extends Activity implements View.OnClickListener {
                     city.setText("當前城市:連江縣");
                     cityname = text;
                     Intent intent = new Intent(SelectCity.this, Lianjiang.class);
+                    intent.putExtra("citycode", updatecitycode);
+                    intent.putExtra("cityname", cityname);
                     startActivity(intent);
                 }
             }
