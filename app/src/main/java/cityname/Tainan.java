@@ -12,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.user.newweather.MainActivity;
+import com.example.user.newweather.Parse;
 import com.example.user.newweather.ParseTest;
 import com.example.user.newweather.R;
 
@@ -24,6 +25,8 @@ public class Tainan extends Activity implements View.OnClickListener {
     private ImageView backBtn;
     private ListView cityListLv;
     private String updatecitycode = "-1";
+    String citycode = "77";
+    int weathercode;
     private String cityname,countryname;
     //選擇城市
     @Override
@@ -48,70 +51,450 @@ public class Tainan extends Activity implements View.OnClickListener {
                 String result = "已選擇:"+text;
                 Toast.makeText(Tainan.this, result,Toast.LENGTH_SHORT).show();
 
-                if(text=="南澳鄉"){
+                if(text=="後壁區"){
                     updatecitycode = "03";
                     city = (TextView)findViewById(R.id.title_selectCity_name);
-                    city.setText("當前城市:南澳鄉");
-                    cityname = text;
-                }else if(text=="羅東鎮"){
+                    city.setText("當前城市:後壁區");
+                    countryname = text;
+                    weathercode = 0;
+                    Intent intent = new Intent(Tainan.this, Parse.class);
+                    intent.putExtra("cityname",cityname);
+                    intent.putExtra("countryname",countryname);
+                    intent.putExtra("citycode",citycode);
+                    intent.putExtra("weathercode",weathercode);
+                    startActivity(intent);
+                }else if(text=="官田區"){
                     updatecitycode = "01";
                     city = (TextView)findViewById(R.id.title_selectCity_name);
-                    city.setText("當前城市:羅東鎮");
-                    cityname = text;
-                }else if(text=="冬山鄉"){
+                    city.setText("當前城市:官田區");
+                    countryname = text;
+                    weathercode = 1;
+                    Intent intent = new Intent(Tainan.this, Parse.class);
+                    intent.putExtra("cityname",cityname);
+                    intent.putExtra("countryname",countryname);
+                    intent.putExtra("citycode",citycode);
+                    intent.putExtra("weathercode",weathercode);
+                    startActivity(intent);
+                }else if(text=="鹽水區"){
                     updatecitycode = "04";
                     city = (TextView)findViewById(R.id.title_selectCity_name);
-                    city.setText("當前城市:冬山鄉");
-                    cityname = text;
-                }else if(text=="壯圍鄉"){
+                    city.setText("當前城市:鹽水區");
+                    countryname = text;
+                    weathercode = 2;
+                    Intent intent = new Intent(Tainan.this, Parse.class);
+                    intent.putExtra("cityname",cityname);
+                    intent.putExtra("countryname",countryname);
+                    intent.putExtra("citycode",citycode);
+                    intent.putExtra("weathercode",weathercode);
+                    startActivity(intent);
+                }else if(text=="麻豆區"){
                     updatecitycode = "05";
                     city = (TextView)findViewById(R.id.title_selectCity_name);
-                    city.setText("當前城市:壯圍鄉");
-                    cityname = text;
+                    city.setText("當前城市:麻豆區");
+                    countryname = text;
+                    weathercode = 3;
+                    Intent intent = new Intent(Tainan.this, Parse.class);
+                    intent.putExtra("cityname",cityname);
+                    intent.putExtra("countryname",countryname);
+                    intent.putExtra("citycode",citycode);
+                    intent.putExtra("weathercode",weathercode);
+                    startActivity(intent);
                 }else if(text=="關廟區"){
                     updatecitycode = "14";
                     city = (TextView)findViewById(R.id.title_selectCity_name);
                     city.setText("當前城市:關廟區");
                     countryname = text;
-                    Intent intent = new Intent(Tainan.this, ParseTest.class);
+                    weathercode = 4;
+                    Intent intent = new Intent(Tainan.this, Parse.class);
                     intent.putExtra("cityname",cityname);
                     intent.putExtra("countryname",countryname);
+                    intent.putExtra("citycode",citycode);
+                    intent.putExtra("weathercode",weathercode);
                     startActivity(intent);
-                }else if(text=="三星鄉"){
+                }else if(text=="佳里區"){
                     updatecitycode = "06";
                     city = (TextView)findViewById(R.id.title_selectCity_name);
-                    city.setText("當前城市:三星鄉");
-                    cityname = text;
-                }else if(text=="蘇澳鎮"){
+                    city.setText("當前城市:佳里區");
+                    countryname = text;
+                    weathercode = 5;
+                    Intent intent = new Intent(Tainan.this, Parse.class);
+                    intent.putExtra("cityname",cityname);
+                    intent.putExtra("countryname",countryname);
+                    intent.putExtra("citycode",citycode);
+                    intent.putExtra("weathercode",weathercode);
+                    startActivity(intent);
+                }else if(text=="山上區"){
                     updatecitycode = "17";
                     city = (TextView)findViewById(R.id.title_selectCity_name);
-                    city.setText("當前城市:蘇澳鎮");
-                    cityname = text;
-                }else if(text=="員山鄉"){
+                    city.setText("當前城市:山上區");
+                    countryname = text;
+                    weathercode = 6;
+                    Intent intent = new Intent(Tainan.this, Parse.class);
+                    intent.putExtra("cityname",cityname);
+                    intent.putExtra("countryname",countryname);
+                    intent.putExtra("citycode",citycode);
+                    intent.putExtra("weathercode",weathercode);
+                    startActivity(intent);
+                }else if(text=="東區"){
                     updatecitycode = "07";
                     city = (TextView)findViewById(R.id.title_selectCity_name);
-                    city.setText("當前城市:員山鄉");
-                    cityname = text;
-                }else if(text=="頭城鎮"){
+                    city.setText("當前城市:東區");
+                    countryname = text;
+                    weathercode = 7;
+                    Intent intent = new Intent(Tainan.this, Parse.class);
+                    intent.putExtra("cityname",cityname);
+                    intent.putExtra("countryname",countryname);
+                    intent.putExtra("citycode",citycode);
+                    intent.putExtra("weathercode",weathercode);
+                    startActivity(intent);
+                }else if(text=="下營區"){
                     updatecitycode = "08";
                     city = (TextView)findViewById(R.id.title_selectCity_name);
-                    city.setText("當前城市:頭城鎮");
-                    cityname = text;
-                }else if(text=="宜蘭市"){
+                    city.setText("當前城市:下營區");
+                    countryname = text;
+                    weathercode = 8;
+                    Intent intent = new Intent(Tainan.this, Parse.class);
+                    intent.putExtra("cityname",cityname);
+                    intent.putExtra("countryname",countryname);
+                    intent.putExtra("citycode",citycode);
+                    intent.putExtra("weathercode",weathercode);
+                    startActivity(intent);
+                }else if(text=="南化區"){
                     updatecitycode = "09";
                     city = (TextView)findViewById(R.id.title_selectCity_name);
-                    city.setText("當前城市:宜蘭市");
-                    cityname = text;
-                }else if(text=="大同鄉"){
+                    city.setText("當前城市:南化區");
+                    countryname = text;
+                    weathercode = 9;
+                    Intent intent = new Intent(Tainan.this, Parse.class);
+                    intent.putExtra("cityname",cityname);
+                    intent.putExtra("countryname",countryname);
+                    intent.putExtra("citycode",citycode);
+                    intent.putExtra("weathercode",weathercode);
+                    startActivity(intent);
+                }else if(text=="楠西區"){
                     updatecitycode = "10";
                     city = (TextView)findViewById(R.id.title_selectCity_name);
-                    city.setText("當前城市:大同鄉");
-                    cityname = text;
-                }else if(text=="礁溪鄉"){
+                    city.setText("當前城市:楠西區");
+                    countryname = text;
+                    weathercode = 10;
+                    Intent intent = new Intent(Tainan.this, Parse.class);
+                    intent.putExtra("cityname",cityname);
+                    intent.putExtra("countryname",countryname);
+                    intent.putExtra("citycode",citycode);
+                    intent.putExtra("weathercode",weathercode);
+                    startActivity(intent);
+                }else if(text=="玉井區"){
                     updatecitycode = "11";
                     city = (TextView)findViewById(R.id.title_selectCity_name);
-                    city.setText("當前城市:礁溪鄉");
-                    cityname = text;
+                    city.setText("當前城市:玉井區");
+                    countryname = text;
+                    weathercode = 11;
+                    Intent intent = new Intent(Tainan.this, Parse.class);
+                    intent.putExtra("cityname",cityname);
+                    intent.putExtra("countryname",countryname);
+                    intent.putExtra("citycode",citycode);
+                    intent.putExtra("weathercode",weathercode);
+                    startActivity(intent);
+                }else if(text=="白河區"){
+                    updatecitycode = "11";
+                    city = (TextView)findViewById(R.id.title_selectCity_name);
+                    city.setText("當前城市:白河區");
+                    countryname = text;
+                    weathercode = 12;
+                    Intent intent = new Intent(Tainan.this, Parse.class);
+                    intent.putExtra("cityname",cityname);
+                    intent.putExtra("countryname",countryname);
+                    intent.putExtra("citycode",citycode);
+                    intent.putExtra("weathercode",weathercode);
+                    startActivity(intent);
+                }else if(text=="仁德區"){
+                    updatecitycode = "11";
+                    city = (TextView)findViewById(R.id.title_selectCity_name);
+                    city.setText("當前城市:仁德區");
+                    countryname = text;
+                    weathercode = 13;
+                    Intent intent = new Intent(Tainan.this, Parse.class);
+                    intent.putExtra("cityname",cityname);
+                    intent.putExtra("countryname",countryname);
+                    intent.putExtra("citycode",citycode);
+                    intent.putExtra("weathercode",weathercode);
+                    startActivity(intent);
+                }else if(text=="龍崎區"){
+                    updatecitycode = "11";
+                    city = (TextView)findViewById(R.id.title_selectCity_name);
+                    city.setText("當前城市:龍崎區");
+                    countryname = text;
+                    weathercode = 14;
+                    Intent intent = new Intent(Tainan.this, Parse.class);
+                    intent.putExtra("cityname",cityname);
+                    intent.putExtra("countryname",countryname);
+                    intent.putExtra("citycode",citycode);
+                    intent.putExtra("weathercode",weathercode);
+                    startActivity(intent);
+                }else if(text=="柳營區"){
+                    updatecitycode = "11";
+                    city = (TextView)findViewById(R.id.title_selectCity_name);
+                    city.setText("當前城市:柳營區");
+                    countryname = text;
+                    weathercode = 15;
+                    Intent intent = new Intent(Tainan.this, Parse.class);
+                    intent.putExtra("cityname",cityname);
+                    intent.putExtra("countryname",countryname);
+                    intent.putExtra("citycode",citycode);
+                    intent.putExtra("weathercode",weathercode);
+                    startActivity(intent);
+                }else if(text=="左鎮區"){
+                    updatecitycode = "11";
+                    city = (TextView)findViewById(R.id.title_selectCity_name);
+                    city.setText("當前城市:左鎮區");
+                    countryname = text;
+                    weathercode = 16;
+                    Intent intent = new Intent(Tainan.this, Parse.class);
+                    intent.putExtra("cityname",cityname);
+                    intent.putExtra("countryname",countryname);
+                    intent.putExtra("citycode",citycode);
+                    intent.putExtra("weathercode",weathercode);
+                    startActivity(intent);
+                }else if(text=="北門區"){
+                    updatecitycode = "11";
+                    city = (TextView)findViewById(R.id.title_selectCity_name);
+                    city.setText("當前城市:北門區");
+                    countryname = text;
+                    weathercode = 17;
+                    Intent intent = new Intent(Tainan.this, Parse.class);
+                    intent.putExtra("cityname",cityname);
+                    intent.putExtra("countryname",countryname);
+                    intent.putExtra("citycode",citycode);
+                    intent.putExtra("weathercode",weathercode);
+                    startActivity(intent);
+                }else if(text=="東山區"){
+                    updatecitycode = "11";
+                    city = (TextView)findViewById(R.id.title_selectCity_name);
+                    city.setText("當前城市:東山區");
+                    countryname = text;
+                    weathercode = 18;
+                    Intent intent = new Intent(Tainan.this, Parse.class);
+                    intent.putExtra("cityname",cityname);
+                    intent.putExtra("countryname",countryname);
+                    intent.putExtra("citycode",citycode);
+                    intent.putExtra("weathercode",weathercode);
+                    startActivity(intent);
+                }else if(text=="將軍區"){
+                    updatecitycode = "11";
+                    city = (TextView)findViewById(R.id.title_selectCity_name);
+                    city.setText("當前城市:將軍區");
+                    countryname = text;
+                    weathercode = 19;
+                    Intent intent = new Intent(Tainan.this, Parse.class);
+                    intent.putExtra("cityname",cityname);
+                    intent.putExtra("countryname",countryname);
+                    intent.putExtra("citycode",citycode);
+                    intent.putExtra("weathercode",weathercode);
+                    startActivity(intent);
+                }else if(text=="安南區"){
+                    updatecitycode = "11";
+                    city = (TextView)findViewById(R.id.title_selectCity_name);
+                    city.setText("當前城市:安南區");
+                    countryname = text;
+                    weathercode = 20;
+                    Intent intent = new Intent(Tainan.this, Parse.class);
+                    intent.putExtra("cityname",cityname);
+                    intent.putExtra("countryname",countryname);
+                    intent.putExtra("citycode",citycode);
+                    intent.putExtra("weathercode",weathercode);
+                    startActivity(intent);
+                }else if(text=="永康區"){
+                    updatecitycode = "11";
+                    city = (TextView)findViewById(R.id.title_selectCity_name);
+                    city.setText("當前城市:永康區");
+                    countryname = text;
+                    weathercode = 21;
+                    Intent intent = new Intent(Tainan.this, Parse.class);
+                    intent.putExtra("cityname",cityname);
+                    intent.putExtra("countryname",countryname);
+                    intent.putExtra("citycode",citycode);
+                    intent.putExtra("weathercode",weathercode);
+                    startActivity(intent);
+                }else if(text=="新市區"){
+                    updatecitycode = "11";
+                    city = (TextView)findViewById(R.id.title_selectCity_name);
+                    city.setText("當前城市:新市區");
+                    countryname = text;
+                    weathercode = 22;
+                    Intent intent = new Intent(Tainan.this, Parse.class);
+                    intent.putExtra("cityname",cityname);
+                    intent.putExtra("countryname",countryname);
+                    intent.putExtra("citycode",citycode);
+                    intent.putExtra("weathercode",weathercode);
+                    startActivity(intent);
+                }else if(text=="北區"){
+                    updatecitycode = "11";
+                    city = (TextView)findViewById(R.id.title_selectCity_name);
+                    city.setText("當前城市:北區");
+                    countryname = text;
+                    weathercode = 23;
+                    Intent intent = new Intent(Tainan.this, Parse.class);
+                    intent.putExtra("cityname",cityname);
+                    intent.putExtra("countryname",countryname);
+                    intent.putExtra("citycode",citycode);
+                    intent.putExtra("weathercode",weathercode);
+                    startActivity(intent);
+                }else if(text=="學甲區"){
+                    updatecitycode = "11";
+                    city = (TextView)findViewById(R.id.title_selectCity_name);
+                    city.setText("當前城市:學甲區");
+                    countryname = text;
+                    weathercode = 24;
+                    Intent intent = new Intent(Tainan.this, Parse.class);
+                    intent.putExtra("cityname",cityname);
+                    intent.putExtra("countryname",countryname);
+                    intent.putExtra("citycode",citycode);
+                    intent.putExtra("weathercode",weathercode);
+                    startActivity(intent);
+                }else if(text=="七股區"){
+                    updatecitycode = "11";
+                    city = (TextView)findViewById(R.id.title_selectCity_name);
+                    city.setText("當前城市:七股區");
+                    countryname = text;
+                    weathercode = 25;
+                    Intent intent = new Intent(Tainan.this, Parse.class);
+                    intent.putExtra("cityname",cityname);
+                    intent.putExtra("countryname",countryname);
+                    intent.putExtra("citycode",citycode);
+                    intent.putExtra("weathercode",weathercode);
+                    startActivity(intent);
+                }else if(text=="南區"){
+                    updatecitycode = "11";
+                    city = (TextView)findViewById(R.id.title_selectCity_name);
+                    city.setText("當前城市:南區");
+                    countryname = text;
+                    weathercode = 26;
+                    Intent intent = new Intent(Tainan.this, Parse.class);
+                    intent.putExtra("cityname",cityname);
+                    intent.putExtra("countryname",countryname);
+                    intent.putExtra("citycode",citycode);
+                    intent.putExtra("weathercode",weathercode);
+                    startActivity(intent);
+                }else if(text=="六甲區"){
+                    updatecitycode = "11";
+                    city = (TextView)findViewById(R.id.title_selectCity_name);
+                    city.setText("當前城市:六甲區");
+                    countryname = text;
+                    weathercode = 27;
+                    Intent intent = new Intent(Tainan.this, Parse.class);
+                    intent.putExtra("cityname",cityname);
+                    intent.putExtra("countryname",countryname);
+                    intent.putExtra("citycode",citycode);
+                    intent.putExtra("weathercode",weathercode);
+                    startActivity(intent);
+                }else if(text=="大內區"){
+                    updatecitycode = "11";
+                    city = (TextView)findViewById(R.id.title_selectCity_name);
+                    city.setText("當前城市:大內區");
+                    countryname = text;
+                    weathercode = 28;
+                    Intent intent = new Intent(Tainan.this, Parse.class);
+                    intent.putExtra("cityname",cityname);
+                    intent.putExtra("countryname",countryname);
+                    intent.putExtra("citycode",citycode);
+                    intent.putExtra("weathercode",weathercode);
+                    startActivity(intent);
+                }else if(text=="安定區"){
+                    updatecitycode = "11";
+                    city = (TextView)findViewById(R.id.title_selectCity_name);
+                    city.setText("當前城市:安定區");
+                    countryname = text;
+                    weathercode = 29;
+                    Intent intent = new Intent(Tainan.this, Parse.class);
+                    intent.putExtra("cityname",cityname);
+                    intent.putExtra("countryname",countryname);
+                    intent.putExtra("citycode",citycode);
+                    intent.putExtra("weathercode",weathercode);
+                    startActivity(intent);
+                }else if(text=="新營區"){
+                    updatecitycode = "11";
+                    city = (TextView)findViewById(R.id.title_selectCity_name);
+                    city.setText("當前城市:新營區");
+                    countryname = text;
+                    weathercode = 30;
+                    Intent intent = new Intent(Tainan.this, Parse.class);
+                    intent.putExtra("cityname",cityname);
+                    intent.putExtra("countryname",countryname);
+                    intent.putExtra("citycode",citycode);
+                    intent.putExtra("weathercode",weathercode);
+                    startActivity(intent);
+                }else if(text=="中西區"){
+                    updatecitycode = "11";
+                    city = (TextView)findViewById(R.id.title_selectCity_name);
+                    city.setText("當前城市:中西區");
+                    countryname = text;
+                    weathercode = 31;
+                    Intent intent = new Intent(Tainan.this, Parse.class);
+                    intent.putExtra("cityname",cityname);
+                    intent.putExtra("countryname",countryname);
+                    intent.putExtra("citycode",citycode);
+                    intent.putExtra("weathercode",weathercode);
+                    startActivity(intent);
+                }else if(text=="西港區"){
+                    updatecitycode = "11";
+                    city = (TextView)findViewById(R.id.title_selectCity_name);
+                    city.setText("當前城市:西港區");
+                    countryname = text;
+                    weathercode = 32;
+                    Intent intent = new Intent(Tainan.this, Parse.class);
+                    intent.putExtra("cityname",cityname);
+                    intent.putExtra("countryname",countryname);
+                    intent.putExtra("citycode",citycode);
+                    intent.putExtra("weathercode",weathercode);
+                    startActivity(intent);
+                }else if(text=="歸仁區"){
+                    updatecitycode = "11";
+                    city = (TextView)findViewById(R.id.title_selectCity_name);
+                    city.setText("當前城市:歸仁區");
+                    countryname = text;
+                    weathercode = 33;
+                    Intent intent = new Intent(Tainan.this, Parse.class);
+                    intent.putExtra("cityname",cityname);
+                    intent.putExtra("countryname",countryname);
+                    intent.putExtra("citycode",citycode);
+                    intent.putExtra("weathercode",weathercode);
+                    startActivity(intent);
+                }else if(text=="新化區"){
+                    updatecitycode = "11";
+                    city = (TextView)findViewById(R.id.title_selectCity_name);
+                    city.setText("當前城市:新化區");
+                    countryname = text;
+                    weathercode = 34;
+                    Intent intent = new Intent(Tainan.this, Parse.class);
+                    intent.putExtra("cityname",cityname);
+                    intent.putExtra("countryname",countryname);
+                    intent.putExtra("citycode",citycode);
+                    intent.putExtra("weathercode",weathercode);
+                    startActivity(intent);
+                }else if(text=="安平區"){
+                    updatecitycode = "11";
+                    city = (TextView)findViewById(R.id.title_selectCity_name);
+                    city.setText("當前城市:安平區");
+                    countryname = text;
+                    weathercode = 35;
+                    Intent intent = new Intent(Tainan.this, Parse.class);
+                    intent.putExtra("cityname",cityname);
+                    intent.putExtra("countryname",countryname);
+                    intent.putExtra("citycode",citycode);
+                    intent.putExtra("weathercode",weathercode);
+                    startActivity(intent);
+                }else if(text=="善化區"){
+                    updatecitycode = "11";
+                    city = (TextView)findViewById(R.id.title_selectCity_name);
+                    city.setText("當前城市:善化區");
+                    countryname = text;
+                    weathercode = 36;
+                    Intent intent = new Intent(Tainan.this, Parse.class);
+                    intent.putExtra("cityname",cityname);
+                    intent.putExtra("countryname",countryname);
+                    intent.putExtra("citycode",citycode);
+                    intent.putExtra("weathercode",weathercode);
+                    startActivity(intent);
                 }
             }
         };

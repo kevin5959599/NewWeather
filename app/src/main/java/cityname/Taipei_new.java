@@ -12,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.user.newweather.MainActivity;
+import com.example.user.newweather.Parse;
 import com.example.user.newweather.R;
 
 /**
@@ -23,13 +24,15 @@ public class Taipei_new extends Activity implements View.OnClickListener {
     private ImageView backBtn;
     private ListView cityListLv;
     private String updatecitycode = "-1";
-    private String cityname;
+    String citycode = "69";
+    int weathercode;
+    private String cityname,countryname;
     //選擇城市
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.select_country);
-
+        cityname = getIntent().getStringExtra("cityname");
         backBtn = (ImageView)findViewById(R.id.title_selectCity_back);
         backBtn.setOnClickListener(this);
 
@@ -47,66 +50,354 @@ public class Taipei_new extends Activity implements View.OnClickListener {
                 String result = "已選擇:"+text;
                 Toast.makeText(Taipei_new.this, result,Toast.LENGTH_SHORT).show();
 
-                if(text=="南澳鄉"){
+                if(text=="鶯歌區"){
                     updatecitycode = "03";
                     city = (TextView)findViewById(R.id.title_selectCity_name);
-                    city.setText("當前城市:南澳鄉");
-                    cityname = text;
-                }else if(text=="羅東鎮"){
+                    city.setText("當前城市:鶯歌區");
+                    countryname = text;
+                    weathercode = 0;
+                    Intent intent = new Intent(Taipei_new.this, Parse.class);
+                    intent.putExtra("cityname",cityname);
+                    intent.putExtra("countryname",countryname);
+                    intent.putExtra("citycode",citycode);
+                    intent.putExtra("weathercode",weathercode);
+                    startActivity(intent);
+                }else if(text=="中和區"){
                     updatecitycode = "01";
                     city = (TextView)findViewById(R.id.title_selectCity_name);
-                    city.setText("當前城市:羅東鎮");
-                    cityname = text;
-                }else if(text=="冬山鄉"){
+                    city.setText("當前城市:中和區");
+                    countryname = text;
+                    weathercode = 1;
+                    Intent intent = new Intent(Taipei_new.this, Parse.class);
+                    intent.putExtra("cityname",cityname);
+                    intent.putExtra("countryname",countryname);
+                    intent.putExtra("citycode",citycode);
+                    intent.putExtra("weathercode",weathercode);
+                    startActivity(intent);
+                }else if(text=="土城區"){
                     updatecitycode = "04";
                     city = (TextView)findViewById(R.id.title_selectCity_name);
-                    city.setText("當前城市:冬山鄉");
-                    cityname = text;
-                }else if(text=="壯圍鄉"){
+                    city.setText("當前城市:土城區");
+                    countryname = text;
+                    weathercode = 2;
+                    Intent intent = new Intent(Taipei_new.this, Parse.class);
+                    intent.putExtra("cityname",cityname);
+                    intent.putExtra("countryname",countryname);
+                    intent.putExtra("citycode",citycode);
+                    intent.putExtra("weathercode",weathercode);
+                    startActivity(intent);
+                }else if(text=="三重區"){
                     updatecitycode = "05";
                     city = (TextView)findViewById(R.id.title_selectCity_name);
-                    city.setText("當前城市:壯圍鄉");
-                    cityname = text;
-                }else if(text=="五結鄉"){
+                    city.setText("當前城市:三重區");
+                    countryname = text;
+                    weathercode = 3;
+                    Intent intent = new Intent(Taipei_new.this, Parse.class);
+                    intent.putExtra("cityname",cityname);
+                    intent.putExtra("countryname",countryname);
+                    intent.putExtra("citycode",citycode);
+                    intent.putExtra("weathercode",weathercode);
+                    startActivity(intent);
+                }else if(text=="三峽區"){
                     updatecitycode = "14";
                     city = (TextView)findViewById(R.id.title_selectCity_name);
-                    city.setText("當前城市:五結鄉");
-                    cityname = text;
-                }else if(text=="三星鄉"){
+                    city.setText("當前城市:三峽區");
+                    countryname = text;
+                    weathercode = 4;
+                    Intent intent = new Intent(Taipei_new.this, Parse.class);
+                    intent.putExtra("cityname",cityname);
+                    intent.putExtra("countryname",countryname);
+                    intent.putExtra("citycode",citycode);
+                    intent.putExtra("weathercode",weathercode);
+                    startActivity(intent);
+                }else if(text=="雙溪區"){
                     updatecitycode = "06";
                     city = (TextView)findViewById(R.id.title_selectCity_name);
-                    city.setText("當前城市:三星鄉");
-                    cityname = text;
-                }else if(text=="蘇澳鎮"){
+                    city.setText("當前城市:雙溪區");
+                    countryname = text;
+                    weathercode = 5;
+                    Intent intent = new Intent(Taipei_new.this, Parse.class);
+                    intent.putExtra("cityname",cityname);
+                    intent.putExtra("countryname",countryname);
+                    intent.putExtra("citycode",citycode);
+                    intent.putExtra("weathercode",weathercode);
+                    startActivity(intent);
+                }else if(text=="三芝區"){
                     updatecitycode = "17";
                     city = (TextView)findViewById(R.id.title_selectCity_name);
-                    city.setText("當前城市:蘇澳鎮");
-                    cityname = text;
-                }else if(text=="員山鄉"){
+                    city.setText("當前城市:三芝區");
+                    countryname = text;
+                    weathercode = 6;
+                    Intent intent = new Intent(Taipei_new.this, Parse.class);
+                    intent.putExtra("cityname",cityname);
+                    intent.putExtra("countryname",countryname);
+                    intent.putExtra("citycode",citycode);
+                    intent.putExtra("weathercode",weathercode);
+                    startActivity(intent);
+                }else if(text=="樹林區"){
                     updatecitycode = "07";
                     city = (TextView)findViewById(R.id.title_selectCity_name);
-                    city.setText("當前城市:員山鄉");
-                    cityname = text;
-                }else if(text=="頭城鎮"){
+                    city.setText("當前城市:樹林區");
+                    countryname = text;
+                    weathercode = 7;
+                    Intent intent = new Intent(Taipei_new.this, Parse.class);
+                    intent.putExtra("cityname",cityname);
+                    intent.putExtra("countryname",countryname);
+                    intent.putExtra("citycode",citycode);
+                    intent.putExtra("weathercode",weathercode);
+                    startActivity(intent);
+                }else if(text=="坪林區"){
                     updatecitycode = "08";
                     city = (TextView)findViewById(R.id.title_selectCity_name);
-                    city.setText("當前城市:頭城鎮");
-                    cityname = text;
-                }else if(text=="宜蘭市"){
+                    city.setText("當前城市:坪林區");
+                    countryname = text;
+                    weathercode = 8;
+                    Intent intent = new Intent(Taipei_new.this, Parse.class);
+                    intent.putExtra("cityname",cityname);
+                    intent.putExtra("countryname",countryname);
+                    intent.putExtra("citycode",citycode);
+                    intent.putExtra("weathercode",weathercode);
+                    startActivity(intent);
+                }else if(text=="石門區"){
                     updatecitycode = "09";
                     city = (TextView)findViewById(R.id.title_selectCity_name);
-                    city.setText("當前城市:宜蘭市");
-                    cityname = text;
-                }else if(text=="大同鄉"){
+                    city.setText("當前城市:石門區");
+                    countryname = text;
+                    weathercode = 9;
+                    Intent intent = new Intent(Taipei_new.this, Parse.class);
+                    intent.putExtra("cityname",cityname);
+                    intent.putExtra("countryname",countryname);
+                    intent.putExtra("citycode",citycode);
+                    intent.putExtra("weathercode",weathercode);
+                    startActivity(intent);
+                }else if(text=="泰山區"){
                     updatecitycode = "10";
                     city = (TextView)findViewById(R.id.title_selectCity_name);
-                    city.setText("當前城市:大同鄉");
-                    cityname = text;
-                }else if(text=="礁溪鄉"){
+                    city.setText("當前城市:泰山區");
+                    countryname = text;
+                    weathercode = 10;
+                    Intent intent = new Intent(Taipei_new.this, Parse.class);
+                    intent.putExtra("cityname",cityname);
+                    intent.putExtra("countryname",countryname);
+                    intent.putExtra("citycode",citycode);
+                    intent.putExtra("weathercode",weathercode);
+                    startActivity(intent);
+                }else if(text=="萬里區"){
                     updatecitycode = "11";
                     city = (TextView)findViewById(R.id.title_selectCity_name);
-                    city.setText("當前城市:礁溪鄉");
-                    cityname = text;
+                    city.setText("當前城市:萬里區");
+                    countryname = text;
+                    weathercode = 11;
+                    Intent intent = new Intent(Taipei_new.this, Parse.class);
+                    intent.putExtra("cityname",cityname);
+                    intent.putExtra("countryname",countryname);
+                    intent.putExtra("citycode",citycode);
+                    intent.putExtra("weathercode",weathercode);
+                    startActivity(intent);
+                }else if(text=="永和區"){
+                    updatecitycode = "11";
+                    city = (TextView)findViewById(R.id.title_selectCity_name);
+                    city.setText("當前城市:永和區");
+                    countryname = text;
+                    weathercode = 12;
+                    Intent intent = new Intent(Taipei_new.this, Parse.class);
+                    intent.putExtra("cityname",cityname);
+                    intent.putExtra("countryname",countryname);
+                    intent.putExtra("citycode",citycode);
+                    intent.putExtra("weathercode",weathercode);
+                    startActivity(intent);
+                }else if(text=="五股區"){
+                    updatecitycode = "11";
+                    city = (TextView)findViewById(R.id.title_selectCity_name);
+                    city.setText("當前城市:五股區");
+                    countryname = text;
+                    weathercode = 13;
+                    Intent intent = new Intent(Taipei_new.this, Parse.class);
+                    intent.putExtra("cityname",cityname);
+                    intent.putExtra("countryname",countryname);
+                    intent.putExtra("citycode",citycode);
+                    intent.putExtra("weathercode",weathercode);
+                    startActivity(intent);
+                }else if(text=="蘆洲區"){
+                    updatecitycode = "11";
+                    city = (TextView)findViewById(R.id.title_selectCity_name);
+                    city.setText("當前城市:蘆洲區");
+                    countryname = text;
+                    weathercode = 14;
+                    Intent intent = new Intent(Taipei_new.this, Parse.class);
+                    intent.putExtra("cityname",cityname);
+                    intent.putExtra("countryname",countryname);
+                    intent.putExtra("citycode",citycode);
+                    intent.putExtra("weathercode",weathercode);
+                    startActivity(intent);
+                }else if(text=="板橋區"){
+                    updatecitycode = "11";
+                    city = (TextView)findViewById(R.id.title_selectCity_name);
+                    city.setText("當前城市:板橋區");
+                    countryname = text;
+                    weathercode = 15;
+                    Intent intent = new Intent(Taipei_new.this, Parse.class);
+                    intent.putExtra("cityname",cityname);
+                    intent.putExtra("countryname",countryname);
+                    intent.putExtra("citycode",citycode);
+                    intent.putExtra("weathercode",weathercode);
+                    startActivity(intent);
+                }else if(text=="深坑區"){
+                    updatecitycode = "11";
+                    city = (TextView)findViewById(R.id.title_selectCity_name);
+                    city.setText("當前城市:深坑區");
+                    countryname = text;
+                    weathercode = 16;
+                    Intent intent = new Intent(Taipei_new.this, Parse.class);
+                    intent.putExtra("cityname",cityname);
+                    intent.putExtra("countryname",countryname);
+                    intent.putExtra("citycode",citycode);
+                    intent.putExtra("weathercode",weathercode);
+                    startActivity(intent);
+                }else if(text=="汐止區"){
+                    updatecitycode = "11";
+                    city = (TextView)findViewById(R.id.title_selectCity_name);
+                    city.setText("當前城市:汐止區");
+                    countryname = text;
+                    weathercode = 17;
+                    Intent intent = new Intent(Taipei_new.this, Parse.class);
+                    intent.putExtra("cityname",cityname);
+                    intent.putExtra("countryname",countryname);
+                    intent.putExtra("citycode",citycode);
+                    intent.putExtra("weathercode",weathercode);
+                    startActivity(intent);
+                }else if(text=="新莊區"){
+                    updatecitycode = "11";
+                    city = (TextView)findViewById(R.id.title_selectCity_name);
+                    city.setText("當前城市:新莊區");
+                    countryname = text;
+                    weathercode = 18;
+                    Intent intent = new Intent(Taipei_new.this, Parse.class);
+                    intent.putExtra("cityname",cityname);
+                    intent.putExtra("countryname",countryname);
+                    intent.putExtra("citycode",citycode);
+                    intent.putExtra("weathercode",weathercode);
+                    startActivity(intent);
+                }else if(text=="八里區"){
+                    updatecitycode = "11";
+                    city = (TextView)findViewById(R.id.title_selectCity_name);
+                    city.setText("當前城市:八里區");
+                    countryname = text;
+                    weathercode = 19;
+                    Intent intent = new Intent(Taipei_new.this, Parse.class);
+                    intent.putExtra("cityname",cityname);
+                    intent.putExtra("countryname",countryname);
+                    intent.putExtra("citycode",citycode);
+                    intent.putExtra("weathercode",weathercode);
+                    startActivity(intent);
+                }else if(text=="林口區"){
+                    updatecitycode = "11";
+                    city = (TextView)findViewById(R.id.title_selectCity_name);
+                    city.setText("當前城市:林口區");
+                    countryname = text;
+                    weathercode = 20;
+                    Intent intent = new Intent(Taipei_new.this, Parse.class);
+                    intent.putExtra("cityname",cityname);
+                    intent.putExtra("countryname",countryname);
+                    intent.putExtra("citycode",citycode);
+                    intent.putExtra("weathercode",weathercode);
+                    startActivity(intent);
+                }else if(text=="烏來區"){
+                    updatecitycode = "11";
+                    city = (TextView)findViewById(R.id.title_selectCity_name);
+                    city.setText("當前城市:烏來區");
+                    countryname = text;
+                    weathercode = 21;
+                    Intent intent = new Intent(Taipei_new.this, Parse.class);
+                    intent.putExtra("cityname",cityname);
+                    intent.putExtra("countryname",countryname);
+                    intent.putExtra("citycode",citycode);
+                    intent.putExtra("weathercode",weathercode);
+                    startActivity(intent);
+                }else if(text=="平溪區"){
+                    updatecitycode = "11";
+                    city = (TextView)findViewById(R.id.title_selectCity_name);
+                    city.setText("當前城市:平溪區");
+                    countryname = text;
+                    weathercode = 22;
+                    Intent intent = new Intent(Taipei_new.this, Parse.class);
+                    intent.putExtra("cityname",cityname);
+                    intent.putExtra("countryname",countryname);
+                    intent.putExtra("citycode",citycode);
+                    intent.putExtra("weathercode",weathercode);
+                    startActivity(intent);
+                }else if(text=="淡水區"){
+                    updatecitycode = "11";
+                    city = (TextView)findViewById(R.id.title_selectCity_name);
+                    city.setText("當前城市:淡水區");
+                    countryname = text;
+                    weathercode = 23;
+                    Intent intent = new Intent(Taipei_new.this, Parse.class);
+                    intent.putExtra("cityname",cityname);
+                    intent.putExtra("countryname",countryname);
+                    intent.putExtra("citycode",citycode);
+                    intent.putExtra("weathercode",weathercode);
+                    startActivity(intent);
+                }else if(text=="石碇區"){
+                    updatecitycode = "11";
+                    city = (TextView)findViewById(R.id.title_selectCity_name);
+                    city.setText("當前城市:石碇區");
+                    countryname = text;
+                    weathercode = 24;
+                    Intent intent = new Intent(Taipei_new.this, Parse.class);
+                    intent.putExtra("cityname",cityname);
+                    intent.putExtra("countryname",countryname);
+                    intent.putExtra("citycode",citycode);
+                    intent.putExtra("weathercode",weathercode);
+                    startActivity(intent);
+                }else if(text=="新店區"){
+                    updatecitycode = "11";
+                    city = (TextView)findViewById(R.id.title_selectCity_name);
+                    city.setText("當前城市:新店區");
+                    countryname = text;
+                    weathercode = 25;
+                    Intent intent = new Intent(Taipei_new.this, Parse.class);
+                    intent.putExtra("cityname",cityname);
+                    intent.putExtra("countryname",countryname);
+                    intent.putExtra("citycode",citycode);
+                    intent.putExtra("weathercode",weathercode);
+                    startActivity(intent);
+                }else if(text=="瑞芳區"){
+                    updatecitycode = "11";
+                    city = (TextView)findViewById(R.id.title_selectCity_name);
+                    city.setText("當前城市:瑞芳區");
+                    countryname = text;
+                    weathercode = 26;
+                    Intent intent = new Intent(Taipei_new.this, Parse.class);
+                    intent.putExtra("cityname",cityname);
+                    intent.putExtra("countryname",countryname);
+                    intent.putExtra("citycode",citycode);
+                    intent.putExtra("weathercode",weathercode);
+                    startActivity(intent);
+                }else if(text=="金山區"){
+                    updatecitycode = "11";
+                    city = (TextView)findViewById(R.id.title_selectCity_name);
+                    city.setText("當前城市:金山區");
+                    countryname = text;
+                    weathercode = 27;
+                    Intent intent = new Intent(Taipei_new.this, Parse.class);
+                    intent.putExtra("cityname",cityname);
+                    intent.putExtra("countryname",countryname);
+                    intent.putExtra("citycode",citycode);
+                    intent.putExtra("weathercode",weathercode);
+                    startActivity(intent);
+                }else if(text=="貢寮區"){
+                    updatecitycode = "11";
+                    city = (TextView)findViewById(R.id.title_selectCity_name);
+                    city.setText("當前城市:貢寮區");
+                    countryname = text;
+                    weathercode = 28;
+                    Intent intent = new Intent(Taipei_new.this, Parse.class);
+                    intent.putExtra("cityname",cityname);
+                    intent.putExtra("countryname",countryname);
+                    intent.putExtra("citycode",citycode);
+                    intent.putExtra("weathercode",weathercode);
+                    startActivity(intent);
                 }
             }
         };

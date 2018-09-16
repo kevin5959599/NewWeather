@@ -12,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.user.newweather.MainActivity;
+import com.example.user.newweather.Parse;
 import com.example.user.newweather.R;
 
 /**
@@ -23,13 +24,15 @@ public class Keelung extends Activity implements View.OnClickListener {
     private ImageView backBtn;
     private ListView cityListLv;
     private String updatecitycode = "-1";
-    private String cityname;
+    String citycode = "49";
+    int weathercode;
+    private String cityname,countryname;
     //選擇城市
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.select_country);
-
+        cityname = getIntent().getStringExtra("cityname");
         backBtn = (ImageView)findViewById(R.id.title_selectCity_back);
         backBtn.setOnClickListener(this);
 
@@ -51,37 +54,86 @@ public class Keelung extends Activity implements View.OnClickListener {
                     updatecitycode = "03";
                     city = (TextView)findViewById(R.id.title_selectCity_name);
                     city.setText("當前城市:信義區");
-                    cityname = text;
+                    countryname = text;
+                    weathercode = 0;
+                    Intent intent = new Intent(Keelung.this, Parse.class);
+                    intent.putExtra("cityname",cityname);
+                    intent.putExtra("countryname",countryname);
+                    intent.putExtra("citycode",citycode);
+                    intent.putExtra("weathercode",weathercode);
+                    startActivity(intent);
                 }else if(text=="安樂區"){
                     updatecitycode = "01";
                     city = (TextView)findViewById(R.id.title_selectCity_name);
                     city.setText("當前城市:安樂區");
-                    cityname = text;
+                    countryname = text;
+                    weathercode = 1;
+                    Intent intent = new Intent(Keelung.this, Parse.class);
+                    intent.putExtra("cityname",cityname);
+                    intent.putExtra("countryname",countryname);
+                    intent.putExtra("citycode",citycode);
+                    intent.putExtra("weathercode",weathercode);
+                    startActivity(intent);
                 }else if(text=="仁愛區"){
                     updatecitycode = "04";
                     city = (TextView)findViewById(R.id.title_selectCity_name);
                     city.setText("當前城市:仁愛區");
-                    cityname = text;
+                    countryname = text;
+                    weathercode = 2;
+                    Intent intent = new Intent(Keelung.this, Parse.class);
+                    intent.putExtra("cityname",cityname);
+                    intent.putExtra("countryname",countryname);
+                    intent.putExtra("citycode",citycode);
+                    intent.putExtra("weathercode",weathercode);
+                    startActivity(intent);
                 }else if(text=="七堵區"){
                     updatecitycode = "05";
                     city = (TextView)findViewById(R.id.title_selectCity_name);
                     city.setText("當前城市:七堵區");
-                    cityname = text;
+                    countryname = text;
+                    weathercode = 3;
+                    Intent intent = new Intent(Keelung.this, Parse.class);
+                    intent.putExtra("cityname",cityname);
+                    intent.putExtra("countryname",countryname);
+                    intent.putExtra("citycode",citycode);
+                    intent.putExtra("weathercode",weathercode);
+                    startActivity(intent);
                 }else if(text=="暖暖區"){
                     updatecitycode = "14";
                     city = (TextView)findViewById(R.id.title_selectCity_name);
                     city.setText("當前城市:暖暖區");
-                    cityname = text;
+                    countryname = text;
+                    weathercode = 4;
+                    Intent intent = new Intent(Keelung.this, Parse.class);
+                    intent.putExtra("cityname",cityname);
+                    intent.putExtra("countryname",countryname);
+                    intent.putExtra("citycode",citycode);
+                    intent.putExtra("weathercode",weathercode);
+                    startActivity(intent);
                 }else if(text=="中山區"){
                     updatecitycode = "06";
                     city = (TextView)findViewById(R.id.title_selectCity_name);
                     city.setText("當前城市:中山區");
-                    cityname = text;
+                    countryname = text;
+                    weathercode = 5;
+                    Intent intent = new Intent(Keelung.this, Parse.class);
+                    intent.putExtra("cityname",cityname);
+                    intent.putExtra("countryname",countryname);
+                    intent.putExtra("citycode",citycode);
+                    intent.putExtra("weathercode",weathercode);
+                    startActivity(intent);
                 }else if(text=="中正區"){
                     updatecitycode = "17";
                     city = (TextView)findViewById(R.id.title_selectCity_name);
                     city.setText("當前城市:中正區");
-                    cityname = text;
+                    countryname = text;
+                    weathercode = 6;
+                    Intent intent = new Intent(Keelung.this, Parse.class);
+                    intent.putExtra("cityname",cityname);
+                    intent.putExtra("countryname",countryname);
+                    intent.putExtra("citycode",citycode);
+                    intent.putExtra("weathercode",weathercode);
+                    startActivity(intent);
                 }
             }
         };

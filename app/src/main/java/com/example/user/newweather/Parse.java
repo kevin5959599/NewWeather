@@ -21,11 +21,13 @@ import java.net.URL;
  * Created by user on 2018/8/30.
  */
 
-public class ParseTest extends Activity {
+public class Parse extends Activity {
     String morning,night;
     String[] am,an,bm,bn,cm,cn;
     String rain_morning,temper_morning,rain_night,temper_night,state_morning,state_night;
-    String cityname,countryname;
+    String cityname,countryname,citycode;
+    int weathercode;
+
     private TextView cityT,countryT,temperT_morning,temperT_night,rainT_morning,rainT_night,stateT_morning,stateT_night;
 
 
@@ -47,15 +49,19 @@ public class ParseTest extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.weather);
+        setContentView(R.layout.weather_test);
         cityname = getIntent().getStringExtra("cityname");
         countryname = getIntent().getStringExtra("countryname");
+        citycode = getIntent().getStringExtra("citycode");
+        weathercode = getIntent().getIntExtra("weathercode",weathercode);
+        String citycode1 = String.valueOf(citycode);
+        Log.d("777777777777",citycode1);
         initView();
         getWeatherDatafromNet();
     }
     private void getWeatherDatafromNet()
     {
-        final String address = "http://opendata.cwb.gov.tw/opendataapi?dataid=F-D0047-081&authorizationkey=CWB-31C940FF-CACC-446B-B684-121414E83C0D";
+        final String address = "http://opendata.cwb.gov.tw/opendataapi?dataid=F-D0047-0"+citycode+"&authorizationkey=CWB-31C940FF-CACC-446B-B684-121414E83C0D";
         Log.d("Address:",address);
         new Thread(new Runnable() {
             @Override
@@ -98,11 +104,10 @@ public class ParseTest extends Activity {
 
         TodayWeather todayWeather = null;
         int count = 0;
-        int temp_a = 285;
+        int temp_a = 282;
         int temp_b = 289;
-        int a = 306;
+        int a = 282;
         int b = 23;
-        int citycode = 2;
         String string;
 
 
@@ -137,18 +142,22 @@ public class ParseTest extends Activity {
                                 /*eventType = xmlPullParser.next();
                                 todayWeather.setDetail(xmlPullParser.getText());
                                 Log.d("86868686", xmlPullParser.getText());*/
-                                if(count==temp_a+citycode*a){
+                               /* String count1 = String.valueOf(count);
+                                Log.d("0000",count1);*/
+                                if(count==temp_a+weathercode*a+weathercode*b){
                                     eventType = xmlPullParser.next();
                                     todayWeather.setMorning(xmlPullParser.getText());
                                     Log.d("1111", xmlPullParser.getText());
                                 }
-                                if(count==temp_b+citycode*a){
-                                    eventType = xmlPullParser.next();
-                                    todayWeather.setNight(xmlPullParser.getText());
-                                    Log.d("2222", xmlPullParser.getText());
-                                }
 
+
+                            }else if(xmlPullParser.getName().equals("locationName")){
+                                eventType = xmlPullParser.next();
+                                todayWeather.setNight(xmlPullParser.getText());
+                                Log.d("2222", xmlPullParser.getText());
                             }
+
+
                         }
 
 
@@ -168,27 +177,26 @@ public class ParseTest extends Activity {
         cityT = (TextView)findViewById(R.id.city);
         countryT = (TextView)findViewById(R.id.country);
         temperT_morning = (TextView)findViewById(R.id.temper_morning);
-        temperT_night = (TextView)findViewById(R.id.temper_night);
+
         rainT_morning = (TextView)findViewById(R.id.rain_morning);
-        rainT_night = (TextView)findViewById(R.id.rain_night);
+
         stateT_morning = (TextView)findViewById(R.id.state_morning);
-        stateT_night = (TextView)findViewById(R.id.state_night);
+
 
         cityT.setText("N/A");
         countryT.setText("N/A");
         temperT_morning.setText("N/A");
-        temperT_night.setText("N/A");
+
         rainT_morning.setText("N/A");
-        rainT_night.setText("N/A");
+
         stateT_morning.setText("N/A");
-        stateT_night.setText("N/A");
+
     }
     void updateTodayWeather(TodayWeather todayWeather)
     {
         morning = todayWeather.toString_Morning();
-        night = todayWeather.toString_Night();
+
         Log.d("5555",morning);
-        Log.d("6666",night);
 
         am = morning.split("。");
         bm = am[1].split(" ");
@@ -201,15 +209,7 @@ public class ParseTest extends Activity {
         stateT_morning.setText(state_morning);
 
 
-        an = night.split("。");
-        bn = an[1].split(" ");
-        cn = an[2].split("氏|度");
-        rain_night = bn[1];
-        temper_night = cn[2];
-        state_night = an[0];
-        temperT_night.setText("溫度:"+temper_night+"℃");
-        rainT_night.setText("降雨:"+rain_night);
-        stateT_night.setText(state_night);
+
 
         cityT.setText(cityname);
         countryT.setText("("+countryname+")");
@@ -219,7 +219,6 @@ public class ParseTest extends Activity {
         }*/
         Log.d("7777",rain_morning);
         Log.d("8888",temper_morning);
-        Log.d("9999",rain_night);
-        Log.d("0000",temper_night);
+
     }
 }

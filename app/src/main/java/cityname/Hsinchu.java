@@ -12,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.user.newweather.MainActivity;
+import com.example.user.newweather.Parse;
 import com.example.user.newweather.R;
 
 /**
@@ -19,18 +20,19 @@ import com.example.user.newweather.R;
  */
 
 public class Hsinchu extends Activity implements View.OnClickListener{
-
-        private TextView city;
-        private ImageView backBtn;
-        private ListView cityListLv;
-        private String updatecitycode = "-1";
-        private String cityname;
+    private TextView city;
+    private ImageView backBtn;
+    private ListView cityListLv;
+    private String updatecitycode = "-1";
+    String citycode = "09";
+    int weathercode;
+    private String cityname,countryname;
         //選擇城市
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.select_country);
-
+            cityname = getIntent().getStringExtra("cityname");
             backBtn = (ImageView)findViewById(R.id.title_selectCity_back);
             backBtn.setOnClickListener(this);
 
@@ -52,67 +54,158 @@ public class Hsinchu extends Activity implements View.OnClickListener{
                         updatecitycode = "03";
                         city = (TextView)findViewById(R.id.title_selectCity_name);
                         city.setText("當前城市:峨眉鄉");
-                        cityname = text;
+                        countryname = text;
+                        weathercode = 0;
+                        Intent intent = new Intent(Hsinchu.this, Parse.class);
+                        intent.putExtra("cityname",cityname);
+                        intent.putExtra("countryname",countryname);
+                        intent.putExtra("citycode",citycode);
+                        intent.putExtra("weathercode",weathercode);
+                        startActivity(intent);
                     }else if(text=="關西鎮"){
                         updatecitycode = "01";
                         city = (TextView)findViewById(R.id.title_selectCity_name);
                         city.setText("當前城市:關西鎮");
-                        cityname = text;
+                        countryname = text;
+                        weathercode = 1;
+                        Intent intent = new Intent(Hsinchu.this, Parse.class);
+                        intent.putExtra("cityname",cityname);
+                        intent.putExtra("countryname",countryname);
+                        intent.putExtra("citycode",citycode);
+                        intent.putExtra("weathercode",weathercode);
+                        startActivity(intent);
                     }else if(text=="芎林鄉"){
                         updatecitycode = "04";
                         city = (TextView)findViewById(R.id.title_selectCity_name);
                         city.setText("當前城市:芎林鄉");
-                        cityname = text;
+                        countryname = text;
+                        weathercode = 2;
+                        Intent intent = new Intent(Hsinchu.this, Parse.class);
+                        intent.putExtra("cityname",cityname);
+                        intent.putExtra("countryname",countryname);
+                        intent.putExtra("citycode",citycode);
+                        intent.putExtra("weathercode",weathercode);
+                        startActivity(intent);
                     }else if(text=="湖口鄉"){
                         updatecitycode = "05";
                         city = (TextView)findViewById(R.id.title_selectCity_name);
                         city.setText("當前城市:湖口鄉");
-                        cityname = text;
+                        countryname = text;
+                        weathercode = 3;
+                        Intent intent = new Intent(Hsinchu.this, Parse.class);
+                        intent.putExtra("cityname",cityname);
+                        intent.putExtra("countryname",countryname);
+                        intent.putExtra("citycode",citycode);
+                        intent.putExtra("weathercode",weathercode);
+                        startActivity(intent);
                     }else if(text=="新豐鄉"){
                         updatecitycode = "14";
                         city = (TextView)findViewById(R.id.title_selectCity_name);
                         city.setText("當前城市:新豐鄉");
-                        cityname = text;
+                        countryname = text;
+                        weathercode = 4;
+                        Intent intent = new Intent(Hsinchu.this, Parse.class);
+                        intent.putExtra("cityname",cityname);
+                        intent.putExtra("countryname",countryname);
+                        intent.putExtra("citycode",citycode);
+                        intent.putExtra("weathercode",weathercode);
+                        startActivity(intent);
                     }else if(text=="新埔鎮"){
                         updatecitycode = "06";
                         city = (TextView)findViewById(R.id.title_selectCity_name);
                         city.setText("當前城市:新埔鎮");
-                        cityname = text;
+                        countryname = text;
+                        weathercode = 5;
+                        Intent intent = new Intent(Hsinchu.this, Parse.class);
+                        intent.putExtra("cityname",cityname);
+                        intent.putExtra("countryname",countryname);
+                        intent.putExtra("citycode",citycode);
+                        intent.putExtra("weathercode",weathercode);
+                        startActivity(intent);
                     }else if(text=="橫山鄉"){
                         updatecitycode = "17";
                         city = (TextView)findViewById(R.id.title_selectCity_name);
                         city.setText("當前城市:橫山鄉");
-                        cityname = text;
+                        countryname = text;
+                        weathercode = 6;
+                        Intent intent = new Intent(Hsinchu.this, Parse.class);
+                        intent.putExtra("cityname",cityname);
+                        intent.putExtra("countryname",countryname);
+                        intent.putExtra("citycode",citycode);
+                        intent.putExtra("weathercode",weathercode);
+                        startActivity(intent);
                     }else if(text=="北埔鄉"){
                         updatecitycode = "07";
                         city = (TextView)findViewById(R.id.title_selectCity_name);
                         city.setText("當前城市:北埔鄉");
-                        cityname = text;
+                        countryname = text;
+                        weathercode = 7;
+                        Intent intent = new Intent(Hsinchu.this, Parse.class);
+                        intent.putExtra("cityname",cityname);
+                        intent.putExtra("countryname",countryname);
+                        intent.putExtra("citycode",citycode);
+                        intent.putExtra("weathercode",weathercode);
+                        startActivity(intent);
                     }else if(text=="寶山鄉"){
                         updatecitycode = "08";
                         city = (TextView)findViewById(R.id.title_selectCity_name);
                         city.setText("當前城市:寶山鄉");
-                        cityname = text;
+                        countryname = text;
+                        weathercode = 8;
+                        Intent intent = new Intent(Hsinchu.this, Parse.class);
+                        intent.putExtra("cityname",cityname);
+                        intent.putExtra("countryname",countryname);
+                        intent.putExtra("citycode",citycode);
+                        intent.putExtra("weathercode",weathercode);
+                        startActivity(intent);
                     }else if(text=="五峰鄉"){
                         updatecitycode = "09";
                         city = (TextView)findViewById(R.id.title_selectCity_name);
                         city.setText("當前城市:五峰鄉");
-                        cityname = text;
+                        countryname = text;
+                        weathercode = 9;
+                        Intent intent = new Intent(Hsinchu.this, Parse.class);
+                        intent.putExtra("cityname",cityname);
+                        intent.putExtra("countryname",countryname);
+                        intent.putExtra("citycode",citycode);
+                        intent.putExtra("weathercode",weathercode);
+                        startActivity(intent);
                     }else if(text=="尖石鄉"){
                         updatecitycode = "10";
                         city = (TextView)findViewById(R.id.title_selectCity_name);
                         city.setText("當前城市:尖石鄉");
-                        cityname = text;
+                        countryname = text;
+                        weathercode = 10;
+                        Intent intent = new Intent(Hsinchu.this, Parse.class);
+                        intent.putExtra("cityname",cityname);
+                        intent.putExtra("countryname",countryname);
+                        intent.putExtra("citycode",citycode);
+                        intent.putExtra("weathercode",weathercode);
+                        startActivity(intent);
                     }else if(text=="竹東鎮"){
                         updatecitycode = "11";
                         city = (TextView)findViewById(R.id.title_selectCity_name);
                         city.setText("當前城市:竹東鎮");
-                        cityname = text;
+                        countryname = text;
+                        weathercode = 11;
+                        Intent intent = new Intent(Hsinchu.this, Parse.class);
+                        intent.putExtra("cityname",cityname);
+                        intent.putExtra("countryname",countryname);
+                        intent.putExtra("citycode",citycode);
+                        intent.putExtra("weathercode",weathercode);
+                        startActivity(intent);
                     }else if(text=="竹北市"){
                         updatecitycode = "11";
                         city = (TextView)findViewById(R.id.title_selectCity_name);
                         city.setText("當前城市:竹北市");
-                        cityname = text;
+                        countryname = text;
+                        weathercode = 12;
+                        Intent intent = new Intent(Hsinchu.this, Parse.class);
+                        intent.putExtra("cityname",cityname);
+                        intent.putExtra("countryname",countryname);
+                        intent.putExtra("citycode",citycode);
+                        intent.putExtra("weathercode",weathercode);
+                        startActivity(intent);
                     }
                 }
             };
